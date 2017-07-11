@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </h:head>
+    <h:body>
+        <a id="yeniUye">
+            <h:graphicImage library="images" name="register.png"></h:graphicImage>
+        </a> &nbsp;
+        <a id="uyeGiris">
+            <h:graphicImage library="images" name="login.png"></h:graphicImage>
+        </a>
+        <script>
+            $("#yeniUye").click(function () {
+                $("a").first().show("fast", function showNext() {
+                    $(this).next("a").show("fast", showNext);
+                });
+            });
+
+            $("#uyeGiris").click(function () {
+                $("a").hide(1000);
+            });
+        </script>
+    </h:body>
+</html>
+
